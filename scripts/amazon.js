@@ -46,7 +46,7 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
+          <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
@@ -55,3 +55,37 @@ products.forEach((product) => {
 
 // Add the products to the Amazon page
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+// Define the add to cart buttons
+document.querySelectorAll('.js-add-to-cart')
+  .forEach((button, index) => {
+    button.addEventListener('click', () => {
+      //console.log(button.dataset); // All data attributes can be accessed via the dataset property
+      const productId = button.dataset.productId; // data-product-id data attribute becomes dataset.productId
+      
+      let matchingItem; // Define a variable to store the matching item
+
+      // Find the product already in the cart
+      cart.forEach((item) => {        
+        if(productId === item.productId) {
+          matchingItem = item;
+        }
+      });
+
+      // If the product is already in the cart, increment the quantity otherwise push the product to the cart array
+      if(matchingItem){
+        // If the product is already in the cart, increment the quantity
+        matchingItem.quantity++;
+      }else{
+        // Push the product to the cart array
+        cart.push({
+          productId: productId,
+          quantity: 1,
+        });
+      }
+      
+      // Log the cart array to the console
+      console.log(cart);
+      
+    });
+  });
