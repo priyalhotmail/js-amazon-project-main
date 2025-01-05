@@ -84,8 +84,21 @@ document.querySelectorAll('.js-add-to-cart')
         });
       }
       
+      let cartQuantity = 0; // Define a variable to store the cart quantity
+      
+      cart.forEach((item) => {
+        cartQuantity += item.quantity; // Increment the cart quantity
+      });
+
+      // Update the cart quantity in the header
+      document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
       // Log the cart array to the console
       console.log(cart);
+
+      // Log the cart Quantity to the console
+      console.log(cartQuantity);
+      
       
     });
   });
