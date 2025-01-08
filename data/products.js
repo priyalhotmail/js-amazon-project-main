@@ -656,5 +656,104 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a965",
+    image: "images/products/backpack.jpg",
+    name: "Men's Black Color Backpack",
+    rating: {
+      stars: 4.5,
+      count: 199
+    },
+    priceCents: 690,
+    keywords: [
+      "bags",
+      "backpacks",
+      "bag",
+      "men"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a975",
+    image: "images/products/umbrella.jpg",
+    name: "Black Plain Foldabel Umbrella",
+    rating: {
+      stars: 4.0,
+      count: 65
+    },
+    priceCents: 130,
+    keywords: [
+      "umbrella",
+      "rain",
+      "accessories",
+      "men",
+      "women"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a985",
+    image: "images/products/techrise-umbrella.webp",
+    name: "TechRise Compact Umbrella",
+    rating: {
+      stars: 4.5,
+      count: 175
+    },
+    priceCents: 160,
+    keywords: [
+      "umbrella",
+      "rain",
+      "accessories",
+      "men",
+      "women"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a995",
+    image: "images/products/everest-kids-winter-boot.webp",
+    name: "Everest - Kids Black Winter Boot",
+    rating: {
+      stars: 4.5,
+      count: 595
+    },
+    priceCents: 799,
+    keywords: [
+      "boots",
+      "winter",
+      "shoes",
+      "kids",
+      "men"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a1005",
+    image: "images/products/women-xtrail-colarado-jacket.webp",
+    name: "X-Trail Colorado Lightweight Hooded Coat",
+    rating: {
+      stars: 4.5,
+      count: 1536
+    },
+    priceCents: 399,
+    keywords: [
+      "jacket",
+      "winter",
+      "coat",
+      "kids",
+      "women"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde044a1105",
+    image: "images/products/women-next-brown-floral-pyjama.webp",
+    name: "Girls Next Brown Floral Cosy Long Sleeve Pyjama",
+    rating: {
+      stars: 4.0,
+      count: 1026
+    },
+    priceCents: 1199,
+    keywords: [
+      "pyjamas",
+      "nightweat",
+      "women"
+    ]
+  },
 ];

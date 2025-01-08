@@ -41,7 +41,7 @@ products.forEach((product) => {
 
       <div class="product-spacer"></div>
 
-      <div class="added-to-cart">
+      <div class="added-to-cart js-added-to-cart-${product.id}">
         <img src="images/icons/checkmark.png">
         Added
       </div>
@@ -55,6 +55,9 @@ products.forEach((product) => {
 
 // Add the products to the Amazon page
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+// Define the addedMessageTimeouts object
+let addedMessageTimeoutId; 
 
 // Define the add to cart buttons
 document.querySelectorAll('.js-add-to-cart')
@@ -101,5 +104,22 @@ document.querySelectorAll('.js-add-to-cart')
       // Log the cart Quantity to the console
       console.log(cartQuantity);
       
+      // Locate the element for added to cart message
+      const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+
+      // Show the added to cart message      
+      addedMessage.classList.add('added-to-cart-visible');
+
+      if(addedMessageTimeoutId){
+        clearTimeout(addedMessageTimeoutId); // Clear the previous timeout
+      }
+
+      const timeoutId = setTimeout(() => {
+        // Hide the added to cart message after 2 seconds
+        addedMessage.classList.remove('added-to-cart-visible');
+      }, 2000);
+
+      // Store the timeout id in the addedMessageTimeouts object
+      addedMessageTimeoutId = timeoutId;
     });
   });
