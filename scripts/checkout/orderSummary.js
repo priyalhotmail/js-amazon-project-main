@@ -136,6 +136,8 @@ export function renderOrderSummary() {
             // Remove the product from the order summary
             container.remove();
             
+            // Render the Payment summary when delete products from the cart
+            renderPaymentSummary();
         });
     });
 
@@ -153,3 +155,5 @@ export function renderOrderSummary() {
 
   // Render the order summary when load the checkout page
   renderOrderSummary();
+  // Render the Payment summary when load the checkout page
+  renderPaymentSummary();
