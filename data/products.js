@@ -757,3 +757,19 @@ export const products = [
     ]
   },
 ];
+
+/**
+ * @description This function returns product details based on the given product Id
+ * @param productId : Product ID to fetch the product
+ * @returns Product details of the given Product ID
+ */
+export function getProduct(productId) {
+  let matchingProduct;
+
+  products.forEach((products) => {
+      if(productId === products.id) {
+          matchingProduct = products;
+      }
+  });
+  return matchingProduct;
+}

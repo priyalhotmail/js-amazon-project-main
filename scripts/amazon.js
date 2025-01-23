@@ -8,6 +8,8 @@ let productsHTML = '';
 let addedMessageTimeoutId; 
 
 products.forEach((product) => {
+
+  // Add the products to the products HTML in Amazon page
   productsHTML += `
     <div class="product-container">
       <div class="product-image-container">
