@@ -95,3 +95,15 @@ export function updateDeliveryOptions(productId, deliveryOptionId) {
     // Update cart in local storage
     saveToLocalStorage();
 }
+
+export function getCartItemCount(){
+    let count = 0;
+
+    cart.forEach((cartItem) => {
+        count += cartItem.quantity;
+    })
+
+    console.log(`cart count: ${count}`);
+    
+    return count;
+}

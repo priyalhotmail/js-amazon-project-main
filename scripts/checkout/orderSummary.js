@@ -1,4 +1,4 @@
-import { cart, removeFromCart, updateDeliveryOptions } from "../../data/cart.js";
+import { cart, removeFromCart, updateDeliveryOptions, getCartItemCount } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -138,6 +138,9 @@ export function renderOrderSummary() {
             
             // Render the Payment summary when delete products from the cart
             renderPaymentSummary();
+
+            // Render the checkout header items count when delete product from the cart
+            updateCheckoutHeaderItems();
         });
     });
 
@@ -149,11 +152,30 @@ export function renderOrderSummary() {
             updateDeliveryOptions(productId, deliveryOptionId);
             renderOrderSummary();
             renderPaymentSummary();
+            updateCheckoutHeaderItems();
         });
     });
   }
 
-  // Render the order summary when load the checkout page
-  //renderOrderSummary();
-  // Render the Payment summary when load the checkout page
-  //renderPaymentSummary();
+  export function updateCheckoutHeaderItems() {
+    const checkoutHeaderHTML = `
+        <div class="checkout-header-left-section">
+          <a href="amazon.html">
+            <img class="amazon-logo" src="../../images/amazon-logo.png">
+            <img class="amazon-mobile-logo" src="../../images/amazon-mobile-logo.png">
+          </a>
+        </div>
+
+        <div class="checkout-header-middle-section">
+          Checkout (<a class="return-to-home-link"
+            href="amazon.html">${getCartItemCount()} items</a>)
+        </div>
+
+        <div class="checkout-header-right-section">
+          <img src="../../images/icons/checkout-lock-icon.png">
+        </div>
+    `;
+
+    document.querySelector('.js-header-content').innerHTML = checkoutHeaderHTML;
+  }
+
