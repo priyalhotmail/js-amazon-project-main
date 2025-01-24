@@ -154,6 +154,6 @@ export function renderOrderSummary() {
   }
 
   // Render the order summary when load the checkout page
-  renderOrderSummary();
+  //renderOrderSummary();
   // Render the Payment summary when load the checkout page
-  renderPaymentSummary();
+  //renderPaymentSummary();
